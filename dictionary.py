@@ -11,6 +11,8 @@ def translate(qry):
         return data[qry]
     elif qry.title() in data:
         return data[qry.title()]
+    elif qry.upper() in data:
+        return data[qry.upper()]
     elif len(get_close_matches(qry,data.keys())) > 0 :
         closest_word=get_close_matches(qry,data.keys(),1)[0]
         yn=input("do you mean %s ?\n Press 'Y' if yes or 'N' if it isn't \n" %closest_word)
